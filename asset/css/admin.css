@@ -1,0 +1,175 @@
+   body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background: #f9fafb;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #1f2933;
+            color: #fff;
+            padding: 15px 25px;
+        }
+
+        .admin-header h2 {
+            font-size: 18px;
+        }
+
+        .admin-header a {
+            margin-left: 15px;
+            color: #f9fafb;
+        }
+
+        .admin-container {
+            display: flex;
+            min-height: calc(100vh - 60px);
+        }
+
+        .sidebar {
+            width: 230px;
+            background: #111827;
+            padding-top: 20px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sidebar ul li a {
+            display: block;
+            padding: 14px 20px;
+            color: #e5e7eb;
+            font-size: 15px;
+            border-left: 4px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .sidebar ul li a:hover,
+        .sidebar ul li a.active {
+            background: #374151;
+            color: #f59e0b;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 25px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #111827;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #374151;
+        }
+
+        .quick-actions h2 {
+            margin-bottom: 15px;
+            color: #111827;
+        }
+
+        .quick-actions ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .quick-actions li {
+            margin-bottom: 10px;
+        }
+
+        .quick-actions a {
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 8px;
+            background: #f59e0b;
+            color: #111827;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .quick-actions a:hover {
+            background: #d97706;
+            color: #fff;
+        }
+
+        .sidebar-toggle {
+            display: none;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #f59e0b;
+            color: #111827;
+            border: none;
+            padding: 10px 12px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        @media screen and (max-width:560px) {
+            .admin-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                height: calc(100% - 60px);
+                transform: translateX(-100%);
+                z-index: 1000;
+                transition: 0.3s;
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .sidebar-toggle {
+                display: block;
+            }
+
+            .main-content {
+                padding: 15px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    
